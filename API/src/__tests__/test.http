@@ -1,0 +1,13 @@
+###
+GET http://localhost:3000/
+###
+POST http://localhost:3000/ciclo/cadastrar/
+Content-Type: application/json
+
+{
+    "nome": "Daniel Duarte da Silva" ,
+    "cpf": "222.222.222.22" ,
+    "idade": 30 ,
+    "rg": "33333333" ,
+    "telefone": "(41)33333-3333"
+}

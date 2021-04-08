@@ -1,5 +1,7 @@
 ###
-GET http://localhost:3000/
+GET http://localhost:3000
+###
+GET  http://localhost:3000/ciclo/listar/33333333/41111111111/
 ###
 POST http://localhost:3000/ciclo/cadastrar/
 Content-Type: application/json

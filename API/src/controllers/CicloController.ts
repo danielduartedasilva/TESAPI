@@ -1,11 +1,11 @@
 import {Request, Response} from "express";
 
-class CicloController{
+class CicloController {
    listar (request: Request, response: Response) {
         response.send("Olá mundo com ts-node-dev!");
     }
 
-    listarPorId (request: Request, response: Response) {
+    listarPorId (request: Request, response: Response){
         const { rg, telefone } = request.params;
         const objeto = {
             nome: "Daniel Duarte da Silva" ,
@@ -18,13 +18,11 @@ class CicloController{
     }
 
     cadastrar (request: Request,  response: Response) {
-        const { rg, telefone } = request.params;
+        const pessoa = request.body;
+        console.log(pessoa);
         const objeto = {
-            nome: "Daniel Duarte da Silva" ,
-            cpf: "222.222.222.22" ,
-            idade: 30 ,
-            rg ,
-            telefone
+            msg: "Cliente cadastrado com sucesso!",
+            pessoa,
         };
         response.json(objeto);
     }

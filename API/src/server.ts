@@ -1,12 +1,12 @@
-import express, {Request, Response} from "express";
+import express from "express";
 import { router } from "./config/routes";
 import { mongoose } from "./config/database";
 
-console.clear();
+console.clear(); // ---------------------------------------------------------para limpar
 
-const app = express();
+const app = express(); // --------------------------------------------------criação da aplicação através do express
 const database = mongoose;
-//Middlewares - são pequenas funcionalidades que entram no meio da aplicação para ajudar a funcionar da maneira que se precisa
+//Middlewares - -----------------------------------------------------------são pequenas funcionalidades que entram no meio da aplicação para ajudar a funcionar da maneira que se precisa
 app.use(express.json());
 app.use(router);
 

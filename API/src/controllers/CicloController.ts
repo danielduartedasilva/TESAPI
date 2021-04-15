@@ -18,11 +18,11 @@ class CicloController {
         response.json(objeto);
     }
 
-    cadastrar (request: Request,  response: Response) {
+    async cadastrar (request: Request,  response: Response) {
         const ciclo = request.body;
         console.log(ciclo);
-        CicloSchema.create(ciclo);
-        response.json(ciclo);
+        const cicloCadastrado = await CicloSchema.create(ciclo);
+        response.json(cicloCadastrado);
     }
 }
 

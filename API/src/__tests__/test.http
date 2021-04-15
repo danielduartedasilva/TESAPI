@@ -7,5 +7,14 @@ POST http://localhost:3000/ciclo/cadastrar/
 Content-Type: application/json
 
 {
-    "data": "2021/04/15"
+    "data": "2021/04/15",
+    "creditos": [{
+        "nome": "teste",
+        "valor": 123
+    }],
+    "debitos": [{
+        "nome": "teste",
+        "valor": 123,
+        "status": "PAGO"
+    }]
 }

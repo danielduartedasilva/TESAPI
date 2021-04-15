@@ -14,10 +14,10 @@ const DebitoSchema = new Schema(
             type: String,
             enum: ["PAGO","AGENDADO","PENDENTE"],
             upercase: true
-        }
+        },
     },
     {
         timestamps: true,
     }
 );
-export default model ("debitos", DebitoSchema);
+export { DebitoSchema };

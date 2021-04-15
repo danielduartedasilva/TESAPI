@@ -1,4 +1,4 @@
-import mongoose, { model, Schema } from "mongoose";
+import { model, Schema } from "mongoose";
 const CreditoSchema = new Schema({
     nome: { 
         type: String, 
@@ -8,10 +8,10 @@ const CreditoSchema = new Schema({
         type: Number, 
         min: [1, "Valor mínimo de R$ 1,00"], 
         required: [true, "o campo valor do crédito é obrigatório!"], 
-    }
+    },
 },
     {
     timestamps: true,
     }
 );
-export default model ("creditos", CreditoSchema);
+export  { CreditoSchema };

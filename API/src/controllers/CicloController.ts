@@ -2,8 +2,8 @@ import {Request, Response} from "express";
 import CicloSchema from "../models/CicloSchema";
 
 class CicloController {
-   listar (request: Request, response: Response) {
-        response.json(CicloSchema.find());
+   async listar (request: Request, response: Response) {
+        response.json(await CicloSchema.find());
     }
 
     listarPorId (request: Request, response: Response){
@@ -19,10 +19,12 @@ class CicloController {
     }
 
     async cadastrar (request: Request,  response: Response) {
-        const ciclo = request.body;
-        console.log(ciclo);
-        const cicloCadastrado = await CicloSchema.create(ciclo);
-        response.json(cicloCadastrado);
+        try {
+            const ciclo = await CicloSchema.create(request.body);
+            response.status(201).json(ciclo);
+        } catch (error) {
+            response.status(400).json(error);
+        } 
     }
 }
 
